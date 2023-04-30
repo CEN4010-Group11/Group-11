@@ -1,10 +1,3 @@
-//
-//  ProgressFeedViewController.swift
-//  Healthfuel
-//
-//  Created by student on 4/14/23.
-//
-
 import UIKit
 import Parse
 import AlamofireImage
@@ -66,6 +59,13 @@ class ProgressFeedViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
 
+    @IBAction func onLogoutButton(_ sender: Any) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let LoginViewController = main.instantiateViewController(identifier: "LoginViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
+        
+        delegate.window?.rootViewController = LoginViewController
+    }
     
 
 }

@@ -33,7 +33,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         //identifying image source, type, and destination in the database.
         let imageData = imageView.image!.pngData()
         let file = PFFileObject(name: "image.png", data: imageData!)
-        
         progressPost["image"] = file
         
         //automatically saving the image without the user having to manually add it again
